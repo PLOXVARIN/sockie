@@ -251,3 +251,22 @@ Array
         )
 
 )
+Array
+(
+    [transfer_date] => 2024-10-16
+    [from_location] => pos
+    [to_location] => sockie
+    [send_by] => pang
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [product_id] => st001qa
+                    [quantity] => 5
+                    [unit_price] => 20
+                    [total_price] => 100
+                )
+
+        )
+
+)

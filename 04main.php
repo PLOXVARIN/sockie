@@ -18,7 +18,13 @@ $result = $conn->query($sql);
 $out_of_stock = $result->num_rows > 0 ? $result->fetch_assoc()['out_of_stock'] : 0;
 
 // Query ดึงชื่อสินค้าที่มี quantity มากที่สุด
-$sql = "SELECT product_name FROM products ORDER BY in_stock DESC LIMIT 1"; // เปลี่ยน quantity เป็น in_stock
+$sql = "
+    SELECT p.product_name 
+    FROM transfer_out_items toi
+    JOIN products p ON toi.product_id = p.product_id
+    ORDER BY toi.quantity DESC 
+    LIMIT 1
+";
 $result = $conn->query($sql);
 $best_selling_product = $result->num_rows > 0 ? $result->fetch_assoc()['product_name'] : "ไม่มีข้อมูล";
 
@@ -115,7 +121,7 @@ $conn->close();
 
     <!-- ปุ่มออกจากระบบชิดขวา -->
     <div class="logout-container ms-3">
-        <a href="01index.html" class="btn btn-outline-warning btn-custom">
+        <a href="index.html" class="btn btn-outline-warning btn-custom">
             <i class="fa fa-sign-out-alt"></i> ออกจากระบบ
         </a>
     </div>

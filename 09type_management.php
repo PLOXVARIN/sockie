@@ -79,7 +79,7 @@ $search_query = isset($_GET['search']) ? $_GET['search'] : ''; /*กำหนด
 
         <!-- ปุ่มออกจากระบบชิดขวา -->
         <div class="logout-container ms-3">
-            <a href="01index.html" class="btn btn-outline-warning btn-custom">
+            <a href="index.html" class="btn btn-outline-warning btn-custom">
                 <i class="fa fa-sign-out-alt"></i> ออกจากระบบ
             </a>
         </div>
